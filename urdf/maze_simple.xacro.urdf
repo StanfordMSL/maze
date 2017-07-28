@@ -13,7 +13,7 @@
   </xacro:wall>
 
   <xacro:wall name="2" mass="$(arg mass)" len="4" >
-    <origin xyz="0 5 0" rpy="0 0 ${pi/2}" />
+    <origin xyz="5 0 0" rpy="0 0 ${pi/2}" />
   </xacro:wall>
 
 </robot>

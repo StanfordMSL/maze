@@ -33,7 +33,7 @@
     </collision>
   </link>
     <gazebo reference="wall_${name}_link">
-    <material>Gazebo/"${color}</material>
+    <material>Gazebo/Red</material>
   </gazebo>
 
   </xacro:macro>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="width" value=".5" />
+  <xacro:property name="height" value="4" />
+
+ <xacro:macro name="wall" params="name mass len *origin">
+
+    <joint name="world_${name}_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="world"/>
+      <child link="wall_${name}_link"/>
+    </joint>
+
+    <link name="wall_${name}_link">
+    <inertial>
+      <origin xyz="0 ${width/2} ${height/2}" />
+      <mass value="${mass}" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 ${width/2} ${height/2}"/>
+      <geometry>
+        <box size="${len} ${width} ${height}" />
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 ${width/2} ${height/2}"/>
+      <geometry>
+        <box size="${len} ${width} ${height}" />
+      </geometry>
+    </collision>
+  </link>
+    <gazebo reference="wall_${name}_link">
+    <material>Gazebo/"${color}</material>
+  </gazebo>
+
+  </xacro:macro>
+</robot>

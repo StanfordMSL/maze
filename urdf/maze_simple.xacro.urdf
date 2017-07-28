@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="maze" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--Import the wall macro -->
+  <xacro:include filename="$(find msl_maze)/urdf/wall.xacro"/>
+  
+  <xacro:arg name="mass" default="1000"/>
+  <!-- Fix to world -->
+  <link name="world"/>
+  
+  <!--maze-->
+  <xacro:wall name="1" mass="$(arg mass)" len="10" >
+    <origin xyz="0 2 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="2" mass="$(arg mass)" len="4" >
+    <origin xyz="0 5 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+</robot>

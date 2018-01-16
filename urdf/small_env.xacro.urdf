@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot name="maze" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--Import the wall macro -->
+  <xacro:include filename="$(find msl_maze)/urdf/wall.xacro"/>
+  
+  <xacro:arg name="mass" default="1000"/>
+  <xacro:arg name="width" default="0.05" />
+  <xacro:arg name="height" default="1" />
+
+  <!-- Fix to world -->
+  <link name="world"/>
+  
+  <!--maze-->
+  <xacro:wall name="1" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="6" >
+    <origin xyz="${$(arg width)} ${3 + $(arg width)} 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="2" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="6" >
+    <origin xyz="${8 + 4*$(arg width)} ${3 + $(arg width)} 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="3" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="${8 + 4*$(arg width)}" >
+    <origin xyz="${4 + 2*$(arg width)} ${6 + $(arg width)} 0" rpy="0 0 0" />
+  </xacro:wall>
+  
+  <xacro:wall name="4" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="${8 + 4*$(arg width)}" >
+    <origin xyz="${4 + 2*$(arg width)} 0 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="5" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="4" >
+    <origin xyz="${2 + 2*$(arg width)} ${4 + $(arg width)} 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="6" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="4" >
+    <origin xyz="${4 + 3*$(arg width)} ${2 + $(arg width)} 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="7" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="2" >
+    <origin xyz="${7 + 3*$(arg width)} 3 0" rpy="0 0 0" />
+  </xacro:wall>
+
+</robot>

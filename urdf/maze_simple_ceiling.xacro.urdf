@@ -16,4 +16,12 @@
     <origin xyz="5 0 0" rpy="0 0 ${pi/2}" />
   </xacro:wall>
 
+  <xacro:wall name="3" mass="$(arg mass)" len="6.5" >
+    <origin xyz="-5 0 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="4" mass="$(arg mass)" len="5" >
+    <origin xyz="0 0 7" rpy="${pi/2} 0 0" />
+  </xacro:wall>
+
 </robot>

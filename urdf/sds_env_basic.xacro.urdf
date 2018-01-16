@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<robot name="maze" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--Import the wall macro -->
+  <xacro:include filename="$(find msl_maze)/urdf/wall2.xacro"/>
+  
+  <xacro:arg name="mass" default="1000"/>
+  <xacro:arg name="width" default="0.25" />
+  <xacro:arg name="height" default="1" />
+
+  <!-- Fix to world -->
+  <link name="world"/>
+  
+  <!--maze-->
+  <xacro:wall name="1" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="9.25" >
+    <origin xyz="0.5 5 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="2" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="7.5" >
+    <origin xyz="4.25 9.5 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="3" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="1.5" >
+    <origin xyz="8 8.75 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="4" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="1.5" >
+    <origin xyz="8 7.25 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="5" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="1.5" >
+    <origin xyz="8 5.75 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="6" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="5" >
+    <origin xyz="5.5 5 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="7" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="2.5" >
+    <origin xyz="6.75 6.5 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="8" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="3.5" >
+    <origin xyz="6.25 8 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="9" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="1" >
+    <origin xyz="8.5 5 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="10" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="2" >
+    <origin xyz="9 4 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="11" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="4" >
+    <origin xyz="11 5 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="12" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="2" >
+    <origin xyz="2 2.5 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="13" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="2.5" >
+    <origin xyz="12 7.75 0" rpy="0 0 ${3*pi/4}" />
+  </xacro:wall>
+
+  <xacro:wall name="14" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="2" >
+    <origin xyz="5 3 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="15" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="2.75" >
+    <origin xyz="6 1.75 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="16" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="5.5" >
+    <origin xyz="3.25 0.5 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="17" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="8.5" >
+    <origin xyz="10.25 0.5 0" rpy="0 0 0" />
+  </xacro:wall>
+  
+  <xacro:wall name="18" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="9.25" >
+    <origin xyz="14.5 5 0" rpy="0 0 ${pi/2}" />
+  </xacro:wall>
+
+  <xacro:wall name="19" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="6.5" >
+    <origin xyz="11.25 9.5 0" rpy="0 0 0" />
+  </xacro:wall>
+
+  <xacro:wall name="20" mass="$(arg mass)" width="$(arg width)" height="$(arg height)" len="1.5" >
+    <origin xyz="8.75 8 0" rpy="0 0 0" />
+  </xacro:wall>
+
+</robot>
